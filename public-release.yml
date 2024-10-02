@@ -1,0 +1,16 @@
+name: Public Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run action
+        uses: andrewthetechie/gha-clone-releases@v1.7.0
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          src_repo: xiaoxiao921/chiens_du_reservoir
+          dst_repo: xiaoxiao921/chiens_du_reservoir_public
+          copy_assets: true
